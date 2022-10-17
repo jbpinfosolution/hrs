@@ -1,40 +1,42 @@
-<section class="h-100 gradient-form" style="background-color: #eee;">
+<section class="h-100 gradient-form" >
   <div class="container py-5 h-100">
     <div class=" row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-8">
-        <div class="row-xl-50">
-        <div class="card rounded-8 text-black">
+       <div class="card rounded-8 text-black">
           <div class="row g-0">
             <div class="col-lg-5">
               <div class="card-body p-md-4 mx-md-4">
 
               <form>
-              
+              <!--admin-->
                    <div class="form-outline mb-4">
-                      <label class="form-label" for="form2Example11" style="font-size:16px;"><b>Admin Account</b></label>
-                      <input type="email" id="form2Example11" class="form-control" 
+                      <label class="form-label" for="form2Example11" ><b>Admin Account</b></label>
+                      <input type="email" id="form2Example11" class="form-control" name="email" [(ngModel)]="email"
                       placeholder="Phone number or email address" />
                    </div>
                    
+            <!--password-->
 
                    <div class="form-outline mb-4">
-                      <label class="form-label" for="form2Example22" style="font-size:16px;"><b>Password</b></label>
-                    <input type="password" id="form2Example22" class="form-control" placeholder="password" />
+                      <label class="form-label" for="form2Example22" ><b>Password</b></label>
+                    <input type="password" id="form2Example22" class="form-control"name="password" [(ngModel)]="password" placeholder="password" />
                     
                   </div>
 
+            <!--button-->
+
                   <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" id="butt" type="button" style="background-color: rgb(56, 54, 54);">Log
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"  type="button"(click)="loginUser()">Log
                       in</button>
                    </div>
 
                    </form>
-
-              </div>
-            </div>
-            <div class="col-lg-7 d-flex align-items-center gradient-custom-2" style="background-color: rgb(56, 54, 54);">
-              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                <h4 class="mb-4" style="margin-left:150px;">JBP HRS</h4>
+          </div>
+        </div>     
+         
+            <div class="col-lg-7 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-6 mb-2">
+                <h4 class="mb-2">JBP HRS</h4>
                 
               </div>
             </div>
@@ -42,6 +44,5 @@
         </div>
       </div>
     </div>
-    </div>
-  </div>
+   </div>
 </section>
