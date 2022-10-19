@@ -3,26 +3,41 @@
       <div class="container login-container">
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                    <form>
+                    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
                         <div class="form-group" >
                           <h6 class="admin">Admin Account</h6>
-                            <input type="email" class="form-control" name="email" required minlength="8" [(ngModel)]="email" #name="ngModel" />
-                            <div *ngIf="name.invalid && (name.dirty || name.touched)">
-                                <div *ngIf="name.errors"> Email is required.</div>
-                            </div>
+                            <input type="email" class="form-control" name="email"  #email="ngModel" required minlength="8" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" ngModel />
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                                <div class="text-color" *ngIf="email.errors?.['required']">Email is required</div>
+                            
+                               <div *ngIf="email.errors?.['minlength']" class="text-color">
+                                Email must be at least 8 characters long.
+                              </div>
+
+                              <div *ngIf="email.errors?.['pattern']" class="text-color">
+                                Enter valid email
+                              </div>
+                            </div>  
                         </div>
                         <div class="form-group">
                           <h6 class="pass">Password</h6>
-                            <input type="password" class="form-control" name="password" [(ngModel)]="password"/>
+                            <input type="password" class="form-control"  name="password" #password="ngModel" required minlength="8" ngModel />
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                                <div class="text-color" *ngIf="password.errors?.['required']">password is required</div>
+                                <div *ngIf="password.errors?.['minlength']" class="text-color">
+                                    Password must be at least 8 characters long.
+                                  </div>
+                            </div>
+                            
                         </div>
-                        <div class="form-group">
-                            <button type="button"(click)="loginUser()" class="btnSubmit">Login</button>
+                             <div class="form-group">
+                            <button type="submit" class="btnSubmit" [disabled]="loginForm.invalid" >Login</button>
                         </div>
                         
                     </form>
                 </div>
-                <div class="col-md-6 jbp">
-                    <h3>JBP HRS</h3>
+                <div class="col-md-6 form-2">
+                    <h3>{{title}}</h3>
                     
                 </div>
             </div>

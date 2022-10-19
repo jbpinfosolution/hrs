@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  title="JBH HRS"
   email:any;
   password:any;
 
@@ -13,11 +14,10 @@ export class LoginComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+   
   }
-
-
-loginUser(){
-
+loginUser(item:any){
+  
    if(this.email=="admin@gmail.com" && this.password=="12345678"){
      window.alert("login successfully")
    }
