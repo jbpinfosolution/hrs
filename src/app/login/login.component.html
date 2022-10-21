@@ -1,48 +1,43 @@
-<section class="h-100 gradient-form" >
-  <div class="container py-5 h-100">
-    <div class=" row d-flex justify-content-center align-items-center h-100">
-      <div class="col-xl-8">
-       <div class="card rounded-8 text-black">
-          <div class="row g-0">
-            <div class="col-lg-5">
-              <div class="card-body p-md-4 mx-md-4">
-
-              <form>
-              <!--admin-->
-                   <div class="form-outline mb-4">
-                      <label class="form-label" for="form2Example11" ><b>Admin Account</b></label>
-                      <input type="email" id="form2Example11" class="form-control" name="email" [(ngModel)]="email"
-                      placeholder="Phone number or email address" />
-                   </div>
-                   
-            <!--password-->
-
-                   <div class="form-outline mb-4">
-                      <label class="form-label" for="form2Example22" ><b>Password</b></label>
-                    <input type="password" id="form2Example22" class="form-control"name="password" [(ngModel)]="password" placeholder="password" />
+<section class="h-100">
+  <div class="container py-5 h-100 "> 
+      <div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+                        <div class="form-group" >
+                          <h6 class="admin">Admin Account</h6>
+                            <input type="email" class="form-control" name="email" [(ngModel)]="email" #em="ngModel" required  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"  ngModel/>
+                            <div *ngIf="em.invalid && (em.dirty || em.touched)">
+                                <div class="text-color" *ngIf="em.errors?.['required']">Email is required</div>
+                            
+                               
+                              <div *ngIf="em.errors?.['pattern']" class="text-color">
+                                Enter valid email
+                              </div>
+                            </div>  
+                        </div>
+                        <div class="form-group">
+                          <h6 class="pass">Password</h6>
+                            <input type="password" class="form-control"  name="password" [(ngModel)]="password" #pass="ngModel" required minlength="8"  ngModel />
+                            <div *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+                                <div class="text-color" *ngIf="pass.errors?.['required']">password is required</div>
+                                <div *ngIf="pass.errors?.['minlength']" class="text-color">
+                                    Password must be at least 8 characters long.
+                                  </div>
+                            </div>
+                            
+                        </div>
+                             <div class="form-group">
+                            <button type="submit" class="btnSubmit" [disabled]="loginForm.invalid" >Login</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="col-md-6 form-2">
+                    <h3>{{title}}</h3>
                     
-                  </div>
-
-            <!--button-->
-
-                  <div class="text-center pt-1 mb-5 pb-1">
-                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"  type="button"(click)="loginUser()">Log
-                      in</button>
-                   </div>
-
-                   </form>
-          </div>
-        </div>     
-         
-            <div class="col-lg-7 d-flex align-items-center gradient-custom-2">
-              <div class="text-white px-3 py-4 p-md-5 mx-md-6 mb-2">
-                <h4 class="mb-2">JBP HRS</h4>
-                
-              </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-   </div>
+  </div>
 </section>

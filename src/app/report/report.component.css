@@ -1,0 +1,14 @@
+.nav{
+    background-color: rgb(248, 242, 242);
+}
+.nav-link,
+.nav-link2{
+    color: black;
+    font-size: 24px;
+    
+}
+.logout{
+    margin-left: 300%;
+}
+
+
