@@ -3,28 +3,25 @@
       <div class="container login-container">
             <div class="row">
                 <div class="col-md-6 login-form-1">
-                    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
+                    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
                         <div class="form-group" >
                           <h6 class="admin">Admin Account</h6>
-                            <input type="email" class="form-control" name="email"  #email="ngModel" required minlength="8" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" ngModel />
-                            <div *ngIf="email.invalid && (email.dirty || email.touched)">
-                                <div class="text-color" *ngIf="email.errors?.['required']">Email is required</div>
+                            <input type="email" class="form-control" name="email" [(ngModel)]="email" #em="ngModel" required  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"  ngModel/>
+                            <div *ngIf="em.invalid && (em.dirty || em.touched)">
+                                <div class="text-color" *ngIf="em.errors?.['required']">Email is required</div>
                             
-                               <div *ngIf="email.errors?.['minlength']" class="text-color">
-                                Email must be at least 8 characters long.
-                              </div>
-
-                              <div *ngIf="email.errors?.['pattern']" class="text-color">
+                               
+                              <div *ngIf="em.errors?.['pattern']" class="text-color">
                                 Enter valid email
                               </div>
                             </div>  
                         </div>
                         <div class="form-group">
                           <h6 class="pass">Password</h6>
-                            <input type="password" class="form-control"  name="password" #password="ngModel" required minlength="8" ngModel />
-                            <div *ngIf="password.invalid && (password.dirty || password.touched)">
-                                <div class="text-color" *ngIf="password.errors?.['required']">password is required</div>
-                                <div *ngIf="password.errors?.['minlength']" class="text-color">
+                            <input type="password" class="form-control"  name="password" [(ngModel)]="password" #pass="ngModel" required minlength="8"  ngModel />
+                            <div *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+                                <div class="text-color" *ngIf="pass.errors?.['required']">password is required</div>
+                                <div *ngIf="pass.errors?.['minlength']" class="text-color">
                                     Password must be at least 8 characters long.
                                   </div>
                             </div>
