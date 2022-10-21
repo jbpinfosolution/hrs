@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { ReportComponent } from './report/report.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,8 +18,10 @@ import { ReportComponent } from './report/report.component';
   imports: [
     BrowserModule,
     FormsModule,
+  
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
