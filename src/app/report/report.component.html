@@ -1,16 +1,51 @@
-
+<!-- Navbar -->
 <ul class="nav justify-content-center">
-    <li class="nav-item">
-            <a class="nav-link" href="/attendance">Attendance</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/report">Report</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link logout" href="/login">Logout</a>
-          </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/attendance">Attendance</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/report">Report</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link logout" href="/login">Logout</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
 
-          </ul>
-          <router-outlet></router-outlet>
-          
-          
+<!-- table -->
+
+    <section class="h-100" >
+      <div class="container-2">
+      <div class="row">
+        <div class="search-emdata">
+          <input
+            class="form-control"
+            type="text"
+            name="search"
+            [(ngModel)]="searchText"
+            autocomplete="off"
+            placeholder="&#61442;  search by month name"
+          />
+        </div>
+      <div class="container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Emp Id</th>
+              <th>Name</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let em of emdata">
+              <td>{{ em.id }}</td>
+              <td>{{ em.name }}</td>
+              <td>{{ em.date }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+    </section>
+ 
