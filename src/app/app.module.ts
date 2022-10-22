@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { ReportComponent } from './report/report.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { ReportComponent } from './report/report.component';
   imports: [
     BrowserModule,
     FormsModule,
-  
+    Ng2SearchPipeModule,
     ReactiveFormsModule,
     AppRoutingModule,
    

@@ -6,14 +6,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-
+ 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
-  search(value: string) {
-    console.log(value);
-  }
+  searchText:any;
+  emdata = [
+    { id: 1, name: 'Person Name', date: '10/10/2022' },
+    { id: 2, name: 'Person Name' , date: '10/10/2022'},
+  ];
   
 }

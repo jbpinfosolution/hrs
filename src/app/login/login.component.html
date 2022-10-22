@@ -1,43 +1,76 @@
 <section class="h-100">
-  <div class="container py-5 h-100 "> 
-      <div class="container login-container">
-            <div class="row">
-                <div class="col-md-6 login-form-1">
-                    <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
-                        <div class="form-group" >
-                          <h6 class="admin">Admin Account</h6>
-                            <input type="email" class="form-control" name="email" [(ngModel)]="email" #em="ngModel" required  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"  ngModel/>
-                            <div *ngIf="em.invalid && (em.dirty || em.touched)">
-                                <div class="text-color" *ngIf="em.errors?.['required']">Email is required</div>
-                            
-                               
-                              <div *ngIf="em.errors?.['pattern']" class="text-color">
-                                Enter valid email
-                              </div>
-                            </div>  
-                        </div>
-                        <div class="form-group">
-                          <h6 class="pass">Password</h6>
-                            <input type="password" class="form-control"  name="password" [(ngModel)]="password" #pass="ngModel" required minlength="8"  ngModel />
-                            <div *ngIf="pass.invalid && (pass.dirty || pass.touched)">
-                                <div class="text-color" *ngIf="pass.errors?.['required']">password is required</div>
-                                <div *ngIf="pass.errors?.['minlength']" class="text-color">
-                                    Password must be at least 8 characters long.
-                                  </div>
-                            </div>
-                            
-                        </div>
-                             <div class="form-group">
-                            <button type="submit" class="btnSubmit" [disabled]="loginForm.invalid" >Login</button>
-                        </div>
-                        
-                    </form>
+  <div class="container py-5 h-100">
+    <div class="container login-container">
+      <div class="row">
+        <div class="col-md-6 login-form-1">
+          <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm)">
+            <div class="form-group">
+
+              <!-- admin text box -->
+
+              <h6 class="admin">Admin Account</h6>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                [(ngModel)]="email"
+                #em="ngModel"
+                required
+                pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+                ngModel
+              />
+              <div *ngIf="em.invalid && (em.dirty || em.touched)">
+                <div class="text-color" *ngIf="em.errors?.['required']">
+                  Email is required
                 </div>
-                <div class="col-md-6 form-2">
-                    <h3>{{title}}</h3>
-                    
+
+                <div *ngIf="em.errors?.['pattern']" class="text-color">
+                  Enter valid email
                 </div>
+              </div>
             </div>
+
+             <!-- password text box -->
+
+            <div class="form-group">
+              <h6 class="pass">Password</h6>
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                [(ngModel)]="password"
+                #pass="ngModel"
+                required
+                minlength="8"
+                ngModel
+              />
+              <div *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+                <div class="text-color" *ngIf="pass.errors?.['required']">
+                  password is required
+                </div>
+                <div *ngIf="pass.errors?.['minlength']" class="text-color">
+                  Password must be at least 8 characters long.
+                </div>
+              </div>
+            </div>
+
+             <!-- button-->
+
+            <div class="form-group">
+              <button
+                type="submit"
+                class="btnSubmit"
+                [disabled]="loginForm.invalid"
+              >
+                Login
+              </button>
+            </div>
+          </form>
         </div>
+        <div class="col-md-6 form-2">
+          <h3>{{ title }}</h3>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

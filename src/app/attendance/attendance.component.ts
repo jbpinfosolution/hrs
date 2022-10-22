@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
 export class AttendanceComponent implements OnInit {
   
   tdata = [
-    {  name: 'Mr. Nice' },
-    { name: 'Narco' },
+    { name: 'person1' },
+    { name: 'person2' },
   ];
   constructor(private router: Router) { }
 
