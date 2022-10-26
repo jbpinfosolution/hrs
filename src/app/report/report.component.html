@@ -17,6 +17,7 @@
     <section class="h-100" >
       <div class="container-2">
       <div class="row">
+       
         <div class="search-emdata">
           <input
             class="form-control"
@@ -24,7 +25,7 @@
             name="search"
             [(ngModel)]="searchText"
             autocomplete="off"
-            placeholder="&#61442;  search by month name"
+            placeholder="  search by month name &#61442;"
           />
         </div>
       <div class="container">
@@ -37,7 +38,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let em of emdata">
+            <tr *ngFor="let em of emdata | filter:searchText">
               <td>{{ em.id }}</td>
               <td>{{ em.name }}</td>
               <td>{{ em.date }}</td>

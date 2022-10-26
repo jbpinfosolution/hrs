@@ -21,16 +21,10 @@ password:any;
    
   }
 loginUser(loginForm:NgForm){
-  console.log(this.email,this.password)
-
   
-    
-   if(this.email=="admin@gmail.com" && this.password=="12345678"){
-   
-
+  if(this.email=="admin@gmail.com" && this.password=="12345678"){
     this.router.navigate(['/attendance']);
    }
-   
    else{
     window.alert("user unauthorized");
    }

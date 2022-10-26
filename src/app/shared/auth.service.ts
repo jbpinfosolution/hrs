@@ -9,9 +9,9 @@ password:any;
 
 constructor() { }
 
-  check(){
+  check(email:any,password:any){
     if(this.email=="admin@gmail.com" && this.password=="12345678"){
-      localStorage.setItem('email',this.email);
+      localStorage.setItem('email',"admin@gmail.com");
       return true;
    }
      
