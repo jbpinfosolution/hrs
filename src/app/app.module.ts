@@ -10,7 +10,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Ng2OrderModule } from 'ng2-order-pipe';
+
 
 
 
@@ -25,7 +25,7 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     BrowserModule,
     FormsModule,
     Ng2SearchPipeModule,
-    Ng2OrderModule,
+  
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,

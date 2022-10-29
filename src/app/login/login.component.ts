@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -34,7 +35,13 @@ loginUser(loginForm:NgForm){
     this.router.navigate(['/attendance']);
    }
    else{
-    window.alert("user unauthorized");
-   }
+    
+    Swal.fire({
+      
+      text: 'Your email id and password in incorrect',
+      icon: 'warning',
+
+   })
+}
 }
 }
