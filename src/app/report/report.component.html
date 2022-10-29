@@ -14,10 +14,9 @@
 
 <!-- table -->
 
-    <section class="h-100" >
+    <section class="h-100">
       <div class="container-2">
       <div class="row">
-       
         <div class="search-emdata">
           <input
             class="form-control"
@@ -25,26 +24,34 @@
             name="search"
             [(ngModel)]="searchText"
             autocomplete="off"
-            placeholder="  search by month name &#61442;"
-          />
-        </div>
+            placeholder="  search by month name "
+          /><img class="sea" src="assets/search.png"/>
+        
       <div class="container">
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Emp Id</th>
-              <th>Name</th>
-              <th>Date</th>
+              <th><img class="img" src="assets/up.png" (click)="IdAssOrder()"/>
+                <img class="img" src="assets/down.png" (click)="IdDecOrder()"/>
+                Emp Id</th>
+
+              <th ><img class="img" src="assets/up.png" (click)="NameAssOrder()"/>
+                <img class="img" src="assets/down.png" (click)="NameDecOrder()"/>
+                Name</th>
+              
+              <th><img class="img" src="assets/up.png" (click)="DateAssOrder()"/>
+                <img class="img" src="assets/down.png" (click)="DateDecOrder()"/>Date</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let em of emdata | filter:searchText">
+            <tr *ngFor="let em of emdata | filter:searchText ">
               <td>{{ em.id }}</td>
               <td>{{ em.name }}</td>
               <td>{{ em.date }}</td>
             </tr>
-          </tbody>
+          </tbody>  
         </table>
+      </div>
       </div>
     </div>
   </div>

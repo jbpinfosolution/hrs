@@ -22,6 +22,14 @@ password:any;
   }
 loginUser(loginForm:NgForm){
   
+  // var output = this.service.check();
+  //   if(output==true){
+  //     this.router.navigate(['/attendance']);
+  //   }
+  //   else{
+  //     window.alert("user unauthorized");
+  //   }
+  // }
   if(this.email=="admin@gmail.com" && this.password=="12345678"){
     this.router.navigate(['/attendance']);
    }

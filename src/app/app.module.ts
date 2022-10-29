@@ -7,6 +7,11 @@ import { LoginComponent } from './login/login.component';
 import { AttendanceComponent } from './attendance/attendance.component';
 import { ReportComponent } from './report/report.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AuthGuard } from './shared/auth.guard';
+import { AuthService } from './shared/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+
 
 
 @NgModule({
@@ -20,11 +25,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserModule,
     FormsModule,
     Ng2SearchPipeModule,
+    Ng2OrderModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
    
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
