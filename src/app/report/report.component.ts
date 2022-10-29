@@ -22,36 +22,36 @@ export class ReportComponent implements OnInit {
   ];
   order: string = 'name';
 
-  orderD(){
+  IdDecOrder(){
     this.emdata=this.emdata.sort(function(a,b){
       return b.id - a.id
     })
   }
-  orderA(){
+  IdAssOrder(){
     this.emdata=this.emdata.sort(function(a,b){
       return a.id - b.id
     })
   
   }
 
-  dec(){
+  NameAssOrder(){
     this.emdata=this.emdata.sort(function(a,b){
       return  a.name > b.name ? 1 : a.name < b.name ? -1 : 0
     })
   }
-  aec(){
+  NameDecOrder(){
     this.emdata=this.emdata.sort(function(a,b){
       return  b.name > a.name ? 1 : b.name < a.name ? -1 : 0
     })
   }
 
-  Odec(){
+  DateAssOrder(){
     this.emdata=this.emdata.sort(function(a,b){
       return  a.date > b.date ? 1 : a.date < b.date ? -1 : 0
     })
   }
 
-  Oaec(){
+  DateDecOrder(){
     this.emdata=this.emdata.sort(function(a,b){
       return  b.date > a.date ? 1 : b.date < a.date ? -1 : 0
     })
