@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-attendance',
   templateUrl: './attendance.component.html',
@@ -8,10 +8,10 @@ import { Router } from '@angular/router';
 export class AttendanceComponent implements OnInit {
   
   tdata = [
-    { name: 'person1' },
-    { name: 'person2' },
+    { name: 'person1', mark:"Mark Attendance" },
+    { name: 'person2', mark:"Mark Attendance" },
   ];
-  constructor(private router: Router) { }
+  constructor() { }
 
   
 
