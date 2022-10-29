@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-attendance',
@@ -17,5 +18,13 @@ export class AttendanceComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  markatten(){
+    Swal.fire({
+      
+      text: 'Attendance has been logged',
+      icon: 'success',
+  })
   
+}
 }

@@ -23,7 +23,7 @@
       <tbody>
         <tr *ngFor="let data of tdata">
           <td >{{ data.name }}</td>
-          <td >{{ data.mark }}</td>
+          <td (click)="markatten()">{{ data.mark }}</td>
         </tr>
       </tbody>
     </table>
