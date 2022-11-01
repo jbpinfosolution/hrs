@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
   providers: [AuthService]
 })
 export class LoginComponent implements OnInit {
-  title="JBH HRS"
+  title="JBP HRS"
   email:any;
 password:any;
   
@@ -23,25 +23,20 @@ password:any;
   }
 loginUser(loginForm:NgForm){
   
-  // var output = this.service.check();
-  //   if(output==true){
-  //     this.router.navigate(['/attendance']);
-  //   }
-  //   else{
-  //     window.alert("user unauthorized");
-  //   }
-  // }
-  if(this.email=="admin@gmail.com" && this.password=="12345678"){
-    this.router.navigate(['/attendance']);
-   }
-   else{
-    
-    Swal.fire({
+  var output = this.service.check(this.email,this.password);
+    if(output==true){
       
-      text: 'Your email id and password in incorrect',
-      icon: 'warning',
+      this.router.navigate(['/attendance']);
+    }
+    else{
+    
+      Swal.fire({
+        
+        text: 'The Email Id or Password is Incorrect. Try again',
+        icon: 'warning',
+  
+     })
+  }
 
-   })
-}
 }
 }

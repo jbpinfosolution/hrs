@@ -6,14 +6,17 @@ import { ReportComponent } from './report/report.component';
 import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'attendance',  component: AttendanceComponent},
-  { path: 'report', component: ReportComponent},
+  { path: '',  component: LoginComponent },
+  { path: 'login',   component: LoginComponent },
+  { path: 'attendance', canActivate:[AuthGuard],  component: AttendanceComponent},
+  { path: 'report', canActivate:[AuthGuard], component: ReportComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [AuthGuard],
+
 })
 export class AppRoutingModule { }
 
