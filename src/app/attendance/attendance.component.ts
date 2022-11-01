@@ -21,7 +21,6 @@ export class AttendanceComponent implements OnInit {
 
   markatten(){
     Swal.fire({
-      
       text: 'Attendance has been logged',
       icon: 'success',
   })

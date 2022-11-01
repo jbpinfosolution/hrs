@@ -20,7 +20,7 @@ export class ReportComponent implements OnInit {
     { id: 5, name: 'ee', date: '12/10/2022'},
     { id: 4, name: 'ff', date: '18/12/2022'},
   ];
-  order: string = 'name';
+  
 
   IdDecOrder(){
     this.emdata=this.emdata.sort(function(a,b){
