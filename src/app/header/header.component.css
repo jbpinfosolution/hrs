@@ -24,3 +24,17 @@
         font-size: 18px;
     }
   }
+  @media only screen and (max-width:414px) {
+    
+    .logout{
+        margin-left: 10%;
+        font-size: 18px;
+    }
+  }
+  @media only screen and (max-width:820px) {
+    
+    .logout{
+        margin-left: 10%;
+        font-size: 18px;
+    }
+  }
